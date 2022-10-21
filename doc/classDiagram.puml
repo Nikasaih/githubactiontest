@@ -1,0 +1,84 @@
+
+@startuml classDiagram
+class Image{
+    - id
+    - url
+}
+class Article {
+    - id
+    - title
+    - description
+    - price
+    - date
+    - criteria: EArticleCriteria
+    - location
+    - isPublic
+
+     'boosts with money
+  '  - visibilityBoostTill : date
+  '  - searchBoostTill : date
+  '  - urgentBoost: bool
+}
+ 
+enum EArticleCriteria {
+    GREAT
+    OK
+    BAD
+}
+
+enum EUserRole {
+    BASIC
+    ADMIN
+    SUPER_ADMIN
+}
+
+class ShippingOption{
+    - id
+    - name
+    - description
+    - price
+    - logo: Image | null
+}
+
+class UserAccount{
+    - id: Int
+    - grade: float
+    - name: string
+    - email: string
+    - hashedPassword: string
+    - salt: string
+    - totalArticleCount: Int
+    - articles: Set<Article>
+    - chatSessions: Set<ChatSession>
+    - favorites: Set<Article>
+    - role: EUserRole
+
+}
+
+class ChatSession{
+    - id
+    - communicant : Set<UserAccount> [Seller + potentialBuyer]
+    - message: Set<ChatMessage>
+}
+
+class ChatMessage{
+    - id
+    - dateCreation
+    - content
+    - Author: UserAccount
+}
+
+
+' relation
+
+Article o--o ShippingOption
+UserAccount o-- Article
+UserAccount::role *-- EUserRole
+Article::criteria *-- EArticleCriteria
+
+
+Article o-- Image
+ChatSession o-- ChatMessage
+ChatSession o--o UserAccount
+
+@enduml

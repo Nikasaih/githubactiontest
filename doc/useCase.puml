@@ -1,0 +1,88 @@
+@startuml useCaseDiagram
+skinparam actorStyle awesome
+!define InternalColor ADD1B2
+!define ExternalColor A9DCDF
+!define ProgramColor B4A7E5
+
+
+
+' actor
+"Program" as Program #ProgramColor
+"Unknown" as Unknown
+"Logged" as Logged
+"Seller" as Seller #ExternalColor
+"Buyer" as Buyer #ExternalColor
+"User" as User
+"External" as External #ExternalColor
+"Internal" as Internal #InternalColor
+"Admin" as Admin#InternalColor
+"SuperAdmin" as SuperAdmin #InternalColor
+
+' inheritence
+User <|-- Unknown
+User <|-- Logged
+
+Logged <|-- External
+External <|-- Seller
+
+
+External <|-- Buyer
+Logged <|-- Internal
+Internal <|-- Admin
+Admin <|-- SuperAdmin
+
+' action
+User --> (look for Article)
+
+'
+Unknown --> (log in )
+Unknown --> (register)
+Unknown --> (password forgot)
+
+'
+Logged --> (log out)
+Logged --> (change password)
+Logged --> (change email)
+Logged --> (delete my account)
+
+'EXTERNAL ARROW
+External -->  (communicate with dealer)
+External -->  (ask help from internal user)
+External -->  (read Q&A)
+  (communicate with dealer) as   (communicate with dealer)#ExternalColor
+(ask help from internal user) as (ask help from internal user)#ExternalColor
+(read Q&A) as (read Q&A)#ExternalColor
+'BUYER ARROW
+Buyer --> (buy with the website system[stripe] && select shipping option)
+Buyer --> (evaluate the seller / 5)
+Buyer --> (CRUD myFavorite)
+(buy with the website system[stripe] && select shipping option) as (buy with the website system[stripe] && select shipping option)#ExternalColor
+(evaluate the seller / 5) as (evaluate the seller / 5)#ExternalColor
+(CRUD myFavorite) as (CRUD myFavorite)#ExternalColor
+'SELLER ARROW
+Seller --> (CRUD my Article)
+(CRUD my Article) as (CRUD my Article) #ExternalColor
+'PROGRAM ARROW
+Program --> (checklist Article.description -> futurs ia)
+Program --> (send mail when userAccount management)
+(checklist Article.description -> futurs ia) as  (checklist Article.description -> futurs ia) #ProgramColor
+(send mail when userAccount management) as (send mail when userAccount management) #ProgramColor
+
+'ADMIN ARROW
+Admin --> (ban user)
+Admin --> (help user)
+Admin --> (manage all article => delete)
+Admin --> (watch analytical dashboard)
+(ban user) as (ban user) #InternalColor
+(help user) as (help user) #InternalColor
+(manage all article => delete) as (manage all article => delete)#InternalColor
+(watch analytical dashboard) as (watch analytical dashboard)#InternalColor
+
+
+
+'SUPER ADMIN ARROW
+SuperAdmin --> (promote as Admin)
+SuperAdmin --> (degrade Admin)
+(promote as Admin) as (promote as Admin)#InternalColor
+(degrade Admin) as (degrade Admin) #InternalColor
+@enduml
