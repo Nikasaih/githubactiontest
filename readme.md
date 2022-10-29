@@ -48,6 +48,6 @@ se connecter au container en exec
 
 | status | side     | nom             |
 | ------ | -------- | --------------- |
-| 🔴     | back ⬛  | jwt integration |
-| 🟠     | front ⬜ | jwt integration |
+| 🟢     | back ⬛  | register/ login |
+| 🟢     | front ⬜ | register/ login |
 | 🟡     | both 🟫  | Ci              |

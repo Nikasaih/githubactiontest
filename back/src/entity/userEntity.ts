@@ -3,7 +3,7 @@ import {
   EUserRole,
   IPrivateUserData,
   BridgeUserData,
-} from "../shared/data/userData";
+} from "../shared/data/userData/userDataInterface";
 
 interface IUserEntity extends IPrivateUserData, BridgeUserData {}
 
@@ -24,4 +24,11 @@ export class UserEntity implements IUserEntity {
     default: EUserRole.BASIC,
   })
   role: EUserRole;
+  @Column()
+  email: string;
+  @Column()
+  hashedPassword: string;
+
+  @Column()
+  passwordSalt: string;
 }

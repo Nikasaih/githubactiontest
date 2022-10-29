@@ -1,18 +1,19 @@
-import { IJwtDatagram } from "../shared/data/userData";
-
+import { IJwtDatagram } from "../shared/data/userData/userDataInterface";
+import jwt_decode from "jwt-decode";
 export const getCurrentJwt = () => {
   if (typeof window !== "undefined") {
     return localStorage.getItem("jwt");
   }
   return;
 };
-
+interface t {
+  exp: number;
+  iat: number;
+  payload: IJwtDatagram;
+}
 export const parseJwt = (token: string): IJwtDatagram | undefined => {
-  try {
-    return JSON.parse(atob(token.split(".")[1]));
-  } catch (e) {
-    return undefined;
-  }
+  let decode: t = jwt_decode(token);
+  return decode.payload;
 };
 
 export const login = (jwt: string) => {

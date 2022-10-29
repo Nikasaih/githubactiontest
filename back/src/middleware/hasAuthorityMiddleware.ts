@@ -1,10 +1,7 @@
 import * as express from "express";
+import { IMyRequest } from "../routes/IMyRequest";
 import { validateJwt } from "../services/jwtServices";
-import { EUserRole, IJwtDatagram } from "../shared/data/userData";
-
-export interface IMyRequest extends express.Request {
-  auth: IJwtDatagram | undefined;
-}
+import { EUserRole } from "../shared/data/userData/userDataInterface";
 
 export const hasValidJwtMiddleware = (
   request: IMyRequest,

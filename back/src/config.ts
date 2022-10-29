@@ -1,4 +1,4 @@
-import { EUserRole } from "./shared/data/userData";
+import { EUserRole } from "./shared/data/userData/userDataInterface";
 
 interface IConfig {
   security: {

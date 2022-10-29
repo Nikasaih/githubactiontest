@@ -1,43 +1,18 @@
-import { createContext, useEffect, useState } from "react";
-import { getCurrentJwt, login, logout, parseJwt } from "../feats/auth";
-import { IJwtDatagram } from "../shared/data/userData";
+import { createContext } from "react";
+import { IUseAuth, useAuth } from "../hooks/rest-hook/useAuth";
 //todo continue
-export const AppContext = createContext<IContextProvider>({});
+interface IContext {
+  generalUseAuth?: IUseAuth;
+}
+export const AppContext = createContext<IContext>({});
 interface IProps {
   children: JSX.Element;
 }
 
-interface IContextProvider {
-  authData?: undefined | IJwtDatagram;
-  handleLogout?: () => void;
-  handleLogin?: (jwt: string) => void;
-}
 export const AppContextProvider = ({ children }: IProps) => {
-  const [authData, setAuthData] = useState<undefined | IJwtDatagram>();
-
-  const loadAuthDataFromJwt = (current: string | undefined | null) => {
-    if (!current) {
-      setAuthData(undefined);
-      return;
-    }
-    setAuthData(parseJwt(current));
-  };
-
-  const handleLogout = () => {
-    setAuthData(undefined);
-    logout();
-  };
-
-  const handleLogin = (jwt: string) => {
-    loadAuthDataFromJwt(jwt);
-    login(jwt);
-  };
-
-  useEffect(() => {
-    loadAuthDataFromJwt(getCurrentJwt());
-  }, []);
+  const generalUseAuth = useAuth();
   return (
-    <AppContext.Provider value={{ authData, handleLogout, handleLogin }}>
+    <AppContext.Provider value={{ generalUseAuth }}>
       {children}
     </AppContext.Provider>
   );

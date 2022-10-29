@@ -1,1 +1,4 @@
-export const allRoute = { testRouteRoot: "/test" };
+const userAccountRoute = { register: "/register", login: "/login" };
+export const allRoute = {
+  userAccountRoute: userAccountRoute,
+};

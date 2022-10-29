@@ -1,11 +1,10 @@
-import { useEffect } from "react";
 import logo from "./logo.svg";
 import "./App.css";
-import { useGetApi } from "./hooks/rest-hook/useGetApi";
-import { allRoute } from "./shared/routesUrls";
-import { usePostApi } from "./hooks/rest-hook/usePostApi";
+import { RegisterForm } from "./component/forms/registerForm";
+import { LoginForm } from "./component/forms/loginForm";
 
 function App() {
+  /* 
   const t = useGetApi({
     route: allRoute.testRouteRoot,
     customHeader: undefined,
@@ -13,7 +12,7 @@ function App() {
   const c = usePostApi();
 
   useEffect(() => {
-    /* console.table(t);
+  console.table(t);
 
     console.table(
       c.postReq({
@@ -24,9 +23,9 @@ function App() {
           jean: "miquel",
         },
       })
-    );*/
+    );
   }, [c, t]);
-
+*/
   return (
     <div className="App">
       <header className="App-header">
@@ -43,6 +42,10 @@ function App() {
           Learn React
         </a>
       </header>
+      <div>
+        <RegisterForm />
+        <LoginForm />
+      </div>
     </div>
   );
 }
