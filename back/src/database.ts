@@ -1,5 +1,6 @@
 import { DataSource } from "typeorm";
 import { ArticleEntity } from "./entity/articleEntity";
+import { FavoriteEntity } from "./entity/favoriteEntity";
 import { UserEntity } from "./entity/userEntity";
 
 export const appDataSource = new DataSource({
@@ -11,7 +12,7 @@ export const appDataSource = new DataSource({
   database: "roott",
   synchronize: true,
   logging: true,
-  entities: [UserEntity, ArticleEntity],
+  entities: [UserEntity, ArticleEntity, FavoriteEntity],
   subscribers: [],
   migrations: [],
 });

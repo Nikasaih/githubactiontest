@@ -21,7 +21,7 @@ export const delArticleById = async (articleId: string) => {
     throw entityNotFound();
   }
 
-  await articleRepo.delete(article);
+  await articleRepo.remove(article);
 };
 
 export const upsertOneArticleWithAuth = async (
@@ -66,5 +66,5 @@ export const delOneByIdWithAuth = async (
     throw notAuthorized();
   }
 
-  await articleRepo.delete(article);
+  await articleRepo.remove(article);
 };

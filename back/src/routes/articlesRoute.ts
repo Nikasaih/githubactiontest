@@ -6,6 +6,7 @@ import {
   getAllArticle,
   getArticleById,
   upsertOneArticleWithAuth,
+  delOneByIdWithAuth,
 } from "../services/articleService";
 import { hasSellerAuthority } from "../middleware/authority/specific";
 import { articleDtoSchema } from "../shared/data/articleData/articleDataSchema";
@@ -21,8 +22,12 @@ export const articlesRoute = ({ app }) => {
   app.get(
     `${allRoute.articlesRoute.get}/:id`,
     async (req: IMyRequest, res: express.Response) => {
-      //@ts-ignore
-      res.send(200).send(await getArticleById(req.param.id));
+      try {
+        //@ts-ignore
+        res.send(200).send(await getArticleById(req.param.id));
+      } catch (err) {
+        res.send(404);
+      }
     }
   );
 
@@ -36,6 +41,19 @@ export const articlesRoute = ({ app }) => {
         res.status(201).send(upserted);
       } catch (err) {
         res.status(400);
+      }
+    }
+  );
+
+  app.delete(
+    `${allRoute.articlesRoute.delMy}/:id`,
+    hasSellerAuthority(),
+    async (req: IMyRequest, res: express.Response) => {
+      try {
+        await delOneByIdWithAuth(req.params.id, req.auth);
+        res.status(200).send();
+      } catch (err) {
+        res.status(404).send();
       }
     }
   );

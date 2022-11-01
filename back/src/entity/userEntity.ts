@@ -5,6 +5,7 @@ import {
   BridgeUserData,
 } from "../shared/data/userData/userDataInterface";
 import { ArticleEntity } from "./articleEntity";
+import { FavoriteEntity } from "./favoriteEntity";
 
 interface IUserEntity extends IPrivateUserData, BridgeUserData {}
 
@@ -33,7 +34,9 @@ export class UserEntity implements IUserEntity {
   @Column()
   passwordSalt: string;
 
-  //
+  //RELATION
   @OneToMany(() => ArticleEntity, (article) => article.manager)
   articles: ArticleEntity[];
+  @OneToMany(() => FavoriteEntity, (favorite) => favorite.manager)
+  favorites: FavoriteEntity[];
 }

@@ -40,4 +40,7 @@ export class ArticleEntity implements IArticleAbs {
   //
   @ManyToOne(() => UserEntity, (user) => user.articles)
   manager: UserEntity;
+
+  @Column("text", { array: true })
+  imagesPath: string[];
 }

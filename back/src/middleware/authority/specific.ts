@@ -19,7 +19,13 @@ export const hasSuperAdminAuthority = () => {
   return hasRoleAuthority(superAdminRoleAuthority);
 };
 
+//SELLER
 export const sellerRoleAuthority = new Set<EUserRole>([EUserRole.BASIC]);
 export const hasSellerAuthority = () => {
+  return hasRoleAuthority(superAdminRoleAuthority);
+};
+//BUYER
+export const buyerRoleAuthority = new Set<EUserRole>([EUserRole.BASIC]);
+export const hasBuyerAuthority = () => {
   return hasRoleAuthority(superAdminRoleAuthority);
 };

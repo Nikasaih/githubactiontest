@@ -53,8 +53,8 @@ se connecter au container en exec
 | 🟡     | both 🟫  | Ci                                |
 | 🔴     | back ⬛  | upload image                      |
 | 🟢     | back ⬛  | get image                         |
-| 🔴     | back ⬛  | crud my article + shipping option |
-| 🔴     | back ⬛  | my favorite                       |
+| 🟢     | back ⬛  | crud my article + shipping option |
+| 🟢     | back ⬛  | my favorite                       |
 | 🔴     | back ⬛  | stripe                            |
 | 🔴     | back ⬛  | .env config : database            |
 | 🔴     | back ⬛  | .env config : cors                |
