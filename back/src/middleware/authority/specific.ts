@@ -18,3 +18,8 @@ export const superAdminRoleAuthority = new Set<EUserRole>([
 export const hasSuperAdminAuthority = () => {
   return hasRoleAuthority(superAdminRoleAuthority);
 };
+
+export const sellerRoleAuthority = new Set<EUserRole>([EUserRole.BASIC]);
+export const hasSellerAuthority = () => {
+  return hasRoleAuthority(superAdminRoleAuthority);
+};

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { IusePostApi } from "./interface";
+import { IuseApi } from "./interface";
 import { axiosInstance } from "./axiosInstance";
 import { getCurrentJwt } from "../../feats/auth";
 
@@ -8,7 +8,7 @@ export const useDelApi = () => {
   const [error, setError] = useState("");
   const [loading, setloading] = useState(true);
 
-  const delReq = (input: IusePostApi) => {
+  const delReq = (input: IuseApi) => {
     axiosInstance
       .delete(input.route, {
         headers: {

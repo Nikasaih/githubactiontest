@@ -26,6 +26,7 @@ const securityData: ISecurityConfig = {
     jwtExpiresInMap: new Map([
       [EUserRole.SUPER_ADMIN, "2h"],
       [EUserRole.ADMIN, "2h"],
+      [EUserRole.BASIC, "10 days"],
     ]),
   },
 };

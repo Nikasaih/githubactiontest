@@ -6,13 +6,13 @@ export const getCurrentJwt = () => {
   }
   return;
 };
-interface t {
+interface IJwtStructure {
   exp: number;
   iat: number;
   payload: IJwtDatagram;
 }
 export const parseJwt = (token: string): IJwtDatagram | undefined => {
-  let decode: t = jwt_decode(token);
+  let decode: IJwtStructure = jwt_decode(token);
   return decode.payload;
 };
 

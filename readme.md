@@ -46,8 +46,16 @@ se connecter au container en exec
 | 🟡     | feat desactivate |
 | 🟢     | done             |
 
-| status | side     | nom             |
-| ------ | -------- | --------------- |
-| 🟢     | back ⬛  | register/ login |
-| 🟢     | front ⬜ | register/ login |
-| 🟡     | both 🟫  | Ci              |
+| status | side     | nom                               |
+| ------ | -------- | --------------------------------- |
+| 🟢     | back ⬛  | register/ login                   |
+| 🟢     | front ⬜ | register/ login                   |
+| 🟡     | both 🟫  | Ci                                |
+| 🔴     | back ⬛  | upload image                      |
+| 🟢     | back ⬛  | get image                         |
+| 🔴     | back ⬛  | crud my article + shipping option |
+| 🔴     | back ⬛  | my favorite                       |
+| 🔴     | back ⬛  | stripe                            |
+| 🔴     | back ⬛  | .env config : database            |
+| 🔴     | back ⬛  | .env config : cors                |
+| 🔴     | back ⬛  | .env config : config              |

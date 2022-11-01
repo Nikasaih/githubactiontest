@@ -1,6 +1,5 @@
 import { createContext } from "react";
 import { IUseAuth, useAuth } from "../hooks/rest-hook/useAuth";
-//todo continue
 interface IContext {
   generalUseAuth?: IUseAuth;
 }
