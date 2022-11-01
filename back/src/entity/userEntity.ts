@@ -1,9 +1,10 @@
-import { Entity, PrimaryGeneratedColumn, Column } from "typeorm";
+import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from "typeorm";
 import {
   EUserRole,
   IPrivateUserData,
   BridgeUserData,
 } from "../shared/data/userData/userDataInterface";
+import { ArticleEntity } from "./articleEntity";
 
 interface IUserEntity extends IPrivateUserData, BridgeUserData {}
 
@@ -31,4 +32,8 @@ export class UserEntity implements IUserEntity {
 
   @Column()
   passwordSalt: string;
+
+  //
+  @OneToMany(() => ArticleEntity, (article) => article.manager)
+  articles: ArticleEntity[];
 }

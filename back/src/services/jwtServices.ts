@@ -8,6 +8,7 @@ export const generateJwt = (user: UserEntity) => {
     firstName: user.firstName,
     lastName: user.lastName,
     role: user.role,
+    id: user.id,
   };
 
   return jsonwebtoken.sign(

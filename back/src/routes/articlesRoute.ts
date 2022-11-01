@@ -2,11 +2,13 @@ import { allRoute } from "../shared/routesUrls";
 import * as express from "express";
 import { IMyRequest } from "./IMyRequest";
 import { isValidBody } from "../middleware/isValidBody";
-import { getAllArticle, getArticleById } from "../services/articleService";
 import {
-  hasAdminAuthority,
-  hasSellerAuthority,
-} from "../middleware/authority/specific";
+  getAllArticle,
+  getArticleById,
+  upsertOneArticleWithAuth,
+} from "../services/articleService";
+import { hasSellerAuthority } from "../middleware/authority/specific";
+import { articleDtoSchema } from "../shared/data/articleData/articleDataSchema";
 
 export const articlesRoute = ({ app }) => {
   app.get(
@@ -24,12 +26,17 @@ export const articlesRoute = ({ app }) => {
     }
   );
 
-  app.delete(
-    `${allRoute.articlesRoute.delAdmin}/:id`,
-    hasAdminAuthority(),
+  app.post(
+    allRoute.articlesRoute.upsertMy,
+    hasSellerAuthority(),
+    isValidBody(articleDtoSchema),
     async (req: IMyRequest, res: express.Response) => {
-      //@ts-ignore
-      res.send(200).send(await delArticleById(req.params.id));
+      try {
+        const upserted = upsertOneArticleWithAuth(req.validBody, req.auth);
+        res.status(201).send(upserted);
+      } catch (err) {
+        res.status(400);
+      }
     }
   );
 };

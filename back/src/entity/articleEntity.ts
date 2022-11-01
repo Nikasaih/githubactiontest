@@ -4,7 +4,13 @@ import {
   Column,
   UpdateDateColumn,
   CreateDateColumn,
+  ManyToOne,
 } from "typeorm";
+import { UserEntity } from "./userEntity";
+import {
+  EArticleCriteria,
+  IArticleAbs,
+} from "../shared/data/articleData/articleDataInterface";
 
 @Entity()
 export class ArticleEntity implements IArticleAbs {
@@ -30,4 +36,8 @@ export class ArticleEntity implements IArticleAbs {
   createdAt: Date;
   @UpdateDateColumn()
   updatedAt: Date;
+
+  //
+  @ManyToOne(() => UserEntity, (user) => user.articles)
+  manager: UserEntity;
 }

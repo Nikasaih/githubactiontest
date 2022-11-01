@@ -1,4 +1,4 @@
-interface IArticleAbs {
+export interface IArticleAbs {
   id?: string;
   title: string;
   description: string;
@@ -7,15 +7,15 @@ interface IArticleAbs {
   isPublic: boolean;
 }
 
-interface IArticleDto extends IArticleAbs {}
+export interface IArticleDto extends IArticleAbs {}
 
-interface IArticleEntity extends IArticleAbs {
+export interface IArticleEntity extends IArticleAbs {
   createdAt?: Date;
   updatedAt?: Date;
   //  images: IImage[];
 }
 
-enum EArticleCriteria {
+export enum EArticleCriteria {
   GREAT,
   BAD,
   OK,
