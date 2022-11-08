@@ -3,6 +3,7 @@ import { IMyRequest } from "../../routes/IMyRequest";
 import { validateJwt } from "../../services/jwtServices";
 import { EUserRole } from "../../shared/data/userData/userDataInterface";
 
+//todo think to del ?
 export const hasValidJwtMiddleware = (
   request: IMyRequest,
   response: express.Response,

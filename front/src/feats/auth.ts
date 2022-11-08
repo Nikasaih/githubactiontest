@@ -1,8 +1,9 @@
 import { IJwtDatagram } from "../shared/data/userData/userDataInterface";
 import jwt_decode from "jwt-decode";
+const JWT_KEY = "jwt";
 export const getCurrentJwt = () => {
   if (typeof window !== "undefined") {
-    return localStorage.getItem("jwt");
+    return localStorage.getItem(JWT_KEY);
   }
   return;
 };
@@ -17,9 +18,9 @@ export const parseJwt = (token: string): IJwtDatagram | undefined => {
 };
 
 export const login = (jwt: string) => {
-  localStorage.setItem("jwt", jwt);
+  localStorage.setItem(JWT_KEY, jwt);
 };
 
 export const logout = () => {
-  localStorage.setItem("jwt", "");
+  localStorage.setItem(JWT_KEY, "");
 };

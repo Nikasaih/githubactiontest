@@ -13,6 +13,7 @@ export const devEnvRoutes = ({ app }) => {
     return;
   });
 
+  //todo disabled
   app.get("/dev--users", async (_: IMyRequest, res: express.Response) => {
     res.send(await userRepo.find());
   });

@@ -15,6 +15,7 @@ export interface IPrivateUserData extends IPublicUserData {
 
 export interface BridgeUserData {
   role: EUserRole;
+  id: string;
 }
 
 export interface IRegistrationRequest extends IPrivateUserData {
