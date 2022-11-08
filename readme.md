@@ -51,7 +51,7 @@ se connecter au container en exec
 | 🟢     | back ⬛  | register/ login                   |
 | 🟢     | front ⬜ | register/ login                   |
 | 🟡     | both 🟫  | Ci                                |
-| 🔴     | back ⬛  | upload image                      |
+| 🟢     | back ⬛  | upload image                      |
 | 🟢     | back ⬛  | get image                         |
 | 🟢     | back ⬛  | crud my article + shipping option |
 | 🟢     | back ⬛  | my favorite                       |

@@ -2,6 +2,7 @@ import { allRoute } from "../shared/routesUrls";
 import * as express from "express";
 import { IMyRequest } from "./IMyRequest";
 import { isValidBody } from "../middleware/isValidBody";
+import { articleDtoSchema } from "../shared/data/articleData/articleDataSchema";
 import {
   getAllArticle,
   getArticleById,
@@ -9,7 +10,19 @@ import {
   delOneByIdWithAuth,
 } from "../services/articleService";
 import { hasSellerAuthority } from "../middleware/authority/specific";
-import { articleDtoSchema } from "../shared/data/articleData/articleDataSchema";
+import * as multer from "multer";
+import { EBodyType } from "../shared/utils/EBodyType";
+// upload img setup
+const storage = multer.diskStorage({
+  destination: (_, __, cb) => {
+    cb(null, "images");
+  },
+  filename: (_, file, cb) => {
+    console.log(file);
+    cb(null, file.originalname);
+  },
+});
+const upload = multer({ storage });
 
 export const articlesRoute = ({ app }) => {
   app.get(
@@ -34,7 +47,8 @@ export const articlesRoute = ({ app }) => {
   app.post(
     allRoute.articlesRoute.upsertMy,
     hasSellerAuthority(),
-    isValidBody(articleDtoSchema),
+    upload.array("images"),
+    isValidBody(articleDtoSchema, EBodyType.FORM_DATA),
     async (req: IMyRequest, res: express.Response) => {
       try {
         const upserted = upsertOneArticleWithAuth(req.validBody, req.auth);
