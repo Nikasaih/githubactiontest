@@ -1,31 +1,24 @@
-import { EUserRole } from "../../shared/data/userData/userDataInterface";
+import {
+  adminRoleAuthority,
+  buyerRoleAuthority,
+  sellerRoleAuthority,
+  superAdminRoleAuthority,
+} from "../../shared/data/authoritySet";
 import { hasRoleAuthority } from "./generics";
-//  ADMIN
-export const adminRoleAuthority = new Set<EUserRole>([
-  EUserRole.ADMIN,
-  EUserRole.SUPER_ADMIN,
-]);
 
 export const hasAdminAuthority = () => {
   return hasRoleAuthority(adminRoleAuthority);
 };
-
-//SUPERADMIN
-export const superAdminRoleAuthority = new Set<EUserRole>([
-  EUserRole.SUPER_ADMIN,
-]);
 
 export const hasSuperAdminAuthority = () => {
   return hasRoleAuthority(superAdminRoleAuthority);
 };
 
 //SELLER
-export const sellerRoleAuthority = new Set<EUserRole>([EUserRole.BASIC]);
 export const hasSellerAuthority = () => {
-  return hasRoleAuthority(superAdminRoleAuthority);
+  return hasRoleAuthority(sellerRoleAuthority);
 };
 //BUYER
-export const buyerRoleAuthority = new Set<EUserRole>([EUserRole.BASIC]);
 export const hasBuyerAuthority = () => {
-  return hasRoleAuthority(superAdminRoleAuthority);
+  return hasRoleAuthority(buyerRoleAuthority);
 };
