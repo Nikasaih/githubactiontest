@@ -2,15 +2,24 @@
     font-size: 20px;
 }
 
-.emailF{
-    margin-right: 10px;
-    color: white;
-    cursor: pointer
+h1{
+    text-align: center;
 }
 
-label{
-    width : 300%;
-    display: block;
-    float: left;
-    margin:auto;
+.form{
+    text-align: center;
+    display:block;
+    width: 100px;
+    height: 100px;
+    padding-bottom: 20px;
+    padding-left: 775px;
+}
+
+.form1{
+    text-align: center;
+    display:block;
+    width: 100px;
+    height: 100px;
+    padding-bottom: 70px;
+    padding-left: 775px;
 }

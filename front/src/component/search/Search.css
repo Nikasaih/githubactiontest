@@ -1,6 +1,11 @@
-.searchBar {
+#searchBar {
     padding: 2rem 1rem;
     background-color: linear-gradient(45deg, rgb(156,12,156),midnightblue);
+    text-align: center;
+    width:40%;
+    height: 5px;
+    margin-top: auto;
+    margin-left: 500px;
 }
 
 .searchBar input {

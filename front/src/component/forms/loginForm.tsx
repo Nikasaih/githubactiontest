@@ -23,31 +23,27 @@ export const LoginForm = () => {
           }
         }}
       >
-        <Form>
-          <label className="email" htmlFor="email">Email </label>
-          <Field
-            className="emailF"
-            id="currentEmail"
-            name="currentEmail"
-            placeholder="john@acme.com"
-            type="email"
-          />
-          <br/>
-          <br/>
-          <label className="Password" htmlFor="email" >Password </label>
-          <Field
-            align="center"
-            id="currentPwd"
-            name="currentPwd"
-            placeholder="your password"
-            type="password"
-          />
-          <br/>
-          <br/>
-          <button type="submit">Submit</button>
-          <br/>
-          <br/>
-        </Form>
+      <div className="form">
+          <Form>
+            <label htmlFor="email">Email </label>
+            <Field
+              className="emailF"
+              id="currentEmail"
+              name="currentEmail"
+              placeholder="john@acme.com"
+              type="email"
+            />
+            <label htmlFor="email" >Password </label>
+            <Field
+              align="center"
+              id="currentPwd"
+              name="currentPwd"
+              placeholder="your password"
+              type="password"
+            />
+            <button type="submit">Submit</button>
+          </Form>
+        </div>
       </Formik>
     </div>
   ) : null;

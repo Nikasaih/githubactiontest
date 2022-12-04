@@ -30,15 +30,14 @@ export const RegisterForm = () => {
           }
         }}
       >
+      <div className="form1">
         <Form>
           <label htmlFor="firstName">First Name</label>
           <Field id="firstName" name="firstName" placeholder="John" />
-          <br/>
-          <br/>
+
           <label htmlFor="lastName">Last Name</label>
           <Field id="lastName" name="lastName" placeholder="Doe" />
-          <br/>
-          <br/>
+
           <label htmlFor="email">Password</label>
           <Field
             id="password"
@@ -46,8 +45,7 @@ export const RegisterForm = () => {
             placeholder="your password"
             type="password"
           />
-          <br/>
-          <br/>
+
           <label htmlFor="email">Email</label>
           <Field
             id="email"
@@ -55,10 +53,10 @@ export const RegisterForm = () => {
             placeholder="john@acme.com"
             type="email"
           />
-          <br/>
-          <br/>
+
           <button type="submit">Submit</button>
         </Form>
+      </div>
       </Formik>
     </div>
   );
