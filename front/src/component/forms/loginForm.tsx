@@ -3,6 +3,8 @@ import { ILoginRequest } from "../../shared/data/userData/userDataInterface";
 import { loginRequestSchema } from "../../shared/data/userData/userDataSchema";
 import { useContext } from "react";
 import AppContext from "../AppContext";
+import "./form.css"
+
 export const LoginForm = () => {
   const { generalUseAuth } = useContext(AppContext);
 
@@ -22,21 +24,29 @@ export const LoginForm = () => {
         }}
       >
         <Form>
-          <label htmlFor="email">Email</label>
+          <label className="email" htmlFor="email">Email </label>
           <Field
+            className="emailF"
             id="currentEmail"
             name="currentEmail"
             placeholder="john@acme.com"
             type="email"
           />
-          <label htmlFor="email">Password</label>
+          <br/>
+          <br/>
+          <label className="Password" htmlFor="email" >Password </label>
           <Field
+            align="center"
             id="currentPwd"
             name="currentPwd"
             placeholder="your password"
             type="password"
           />
+          <br/>
+          <br/>
           <button type="submit">Submit</button>
+          <br/>
+          <br/>
         </Form>
       </Formik>
     </div>

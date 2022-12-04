@@ -1,0 +1,16 @@
+.email .password{
+    font-size: 20px;
+}
+
+.emailF{
+    margin-right: 10px;
+    color: white;
+    cursor: pointer
+}
+
+label{
+    width : 300%;
+    display: block;
+    float: left;
+    margin:auto;
+}

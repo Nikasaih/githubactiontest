@@ -3,7 +3,7 @@ import { Formik, Field, Form } from "formik";
 import { usePostApi } from "../../hooks/rest-hook/usePostApi";
 import { IRegistrationRequest } from "../../shared/data/userData/userDataInterface";
 import { registrationRequestSchema } from "../../shared/data/userData/userDataSchema";
-
+import "./form.css"
 import { allRoute } from "../../shared/routesUrls";
 
 export const RegisterForm = () => {
@@ -33,10 +33,12 @@ export const RegisterForm = () => {
         <Form>
           <label htmlFor="firstName">First Name</label>
           <Field id="firstName" name="firstName" placeholder="John" />
-
+          <br/>
+          <br/>
           <label htmlFor="lastName">Last Name</label>
           <Field id="lastName" name="lastName" placeholder="Doe" />
-
+          <br/>
+          <br/>
           <label htmlFor="email">Password</label>
           <Field
             id="password"
@@ -44,7 +46,8 @@ export const RegisterForm = () => {
             placeholder="your password"
             type="password"
           />
-
+          <br/>
+          <br/>
           <label htmlFor="email">Email</label>
           <Field
             id="email"
@@ -52,7 +55,8 @@ export const RegisterForm = () => {
             placeholder="john@acme.com"
             type="email"
           />
-
+          <br/>
+          <br/>
           <button type="submit">Submit</button>
         </Form>
       </Formik>

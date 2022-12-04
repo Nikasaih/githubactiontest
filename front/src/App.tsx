@@ -1,12 +1,10 @@
 import "./App.css";
-import { RegisterForm } from "./component/forms/registerForm";
-import { LoginForm } from "./component/forms/loginForm";
-
+import  Site  from "./Containers/Site/Site";
+import {BrowserRouter as Router, Route, Link} from "react-router-dom"
 function App() {
   return (
-    <div className="App">
-      <RegisterForm />
-      <LoginForm />
+    <div>
+      <Site/>
     </div>
   );
 }
