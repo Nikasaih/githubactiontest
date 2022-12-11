@@ -3,8 +3,8 @@ import { IuseApi } from "./interface";
 import { axiosInstance } from "./axiosInstance";
 import { getCurrentJwt } from "../../feats/auth";
 
-export const useGetApi = (input: IuseApi) => {
-  const [response, setResponse] = useState(null);
+export function useGetApi<T>(input: IuseApi) {
+  const [response, setResponse] = useState<T>(null);
   const [error, setError] = useState("");
   const [loading, setloading] = useState(true);
 
@@ -34,4 +34,4 @@ export const useGetApi = (input: IuseApi) => {
 
   // custom hook returns value
   return { response, error, loading };
-};
+}

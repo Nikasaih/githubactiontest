@@ -1,11 +1,13 @@
 import "./App.css";
-import  Site  from "./Containers/Site/Site";
-import {BrowserRouter as Router, Route, Link} from "react-router-dom"
+import { PageManager } from "./page/pageManager";
+import { Header } from "./component/header/Header";
 function App() {
   return (
-    <div>
-      <Site/>
-    </div>
+    <>
+      <Header />
+      <PageManager />
+      {/* todo Insert footer */}
+    </>
   );
 }
 
