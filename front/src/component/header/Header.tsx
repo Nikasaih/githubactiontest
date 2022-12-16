@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import { Link } from "react-router-dom";
 import {
   adminRoleAuthority,
   buyerRoleAuthority,
@@ -8,7 +9,11 @@ import {
 import AppContext from "../AppContext";
 
 const GenericHeader = (): JSX.Element => {
-  return <></>;
+  return (
+    <>
+      <Link to="/">Home</Link>
+    </>
+  );
 };
 const AnonymusHeader = (): JSX.Element => {
   return <></>;
