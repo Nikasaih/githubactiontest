@@ -5,17 +5,20 @@ import "../../App.css";
 import { RegisterForm } from "../../component/forms/registerForm";
 import { LoginForm } from "../../component/forms/loginForm";
 import Search from '../../component/search/Search';
-import {BrowserRouter as Router, Route, Link} from "react-router-dom"
+import Profile from "../../component/profile/profile";
+import {Switch, Route} from "react-router-dom";
+import Accueil from "./Accueil"
 
 class Site extends Component {
     render(){
         return(
             <>
                 <NavBar/>
-                <br/>
                 <Search/>
-                <RegisterForm/>
-                <LoginForm/>
+                {/* <RegisterForm/>
+                <LoginForm/> */}
+                <Profile/>
+                {/* <Accueil/> */}
                 <Footer/>
             </>
         );
