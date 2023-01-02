@@ -1,5 +1,4 @@
-import React, {useState, useEffect, Component} from "react";
-import image from '../images/raiden2.jpeg';
+import React from "react";
 import "./Accueil.css";
 
 export default function Accueil(){

@@ -1,6 +1,5 @@
 import React, {useState, useEffect, Component} from "react";
 import "./profile.css";
-import image from '../../Containers/images/narukami.jpg'
 
 export default function profile(){
     return(

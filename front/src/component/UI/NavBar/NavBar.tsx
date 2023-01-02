@@ -9,9 +9,8 @@ export default function NavBar(){
     return(
         <>
             <nav>
-                <Router>
-                    <ul className="liste">
-                        <Link className="items" to="/" >Accueil</Link>
+                <ul className="liste">
+                        <Link className="items" to="/">Accueil</Link>
                         <Link className="items" to="/Profile">Profile</Link>
                         <Link className="items" to="/Inscription">Inscription</Link>
                         <Link className="items" to="/Connexion">Connexion</Link>
@@ -19,7 +18,6 @@ export default function NavBar(){
 
                     {/* <Route path="/Inscription" element={<RegisterForm/>} /> */}
 
-                </Router>
                           
                     {/* <ul className="liste">
                         {items.map((item,index)=>{

@@ -1,24 +1,24 @@
 import "./App.css";
-<<<<<<< HEAD
-import  Site  from "./Containers/Site/Site";
-import {BrowserRouter} from "react-router-dom"
+import { PageManager } from "./page/pageManager";
+import { Header } from "./component/header/Header";
+import Site from "../src/Containers/Site/Site";
+import { BrowserRouter } from "react-router-dom";
+import NavBar from "./component/UI/NavBar/NavBar";
+import Search from "./component/search/Search";
+import Footer from "./component/UI/Footer/Footer";
 
 function App() {
   return (
-    <div>
-        <Site/>     
-    </div>
-=======
-import { PageManager } from "./page/pageManager";
-import { Header } from "./component/header/Header";
-function App() {
-  return (
     <>
-      <Header />
+      {/* <Header />
       <PageManager />
-      {/* todo Insert footer */}
+      <Footer/> */}
+      <div>
+      {/* <BrowserRouter> */}
+        <Site />
+      {/* </BrowserRouter> */}
+    </div>
     </>
->>>>>>> 0fcddb695e7715a66626f2831d53c0d895714415
   );
 }
 
