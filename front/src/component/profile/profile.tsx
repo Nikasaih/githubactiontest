@@ -7,7 +7,7 @@ export default function profile(){
             <div className="container rounded bg-white mt-5 mb-5">
                 <div className="row">
                     <div className="col-md-3 border-right">
-                        <div className="d-flex flex-column align-items-center text-center p-3 py-5"><img className="rounded-circle mt-5" width="150px" src={"image"}/></div>
+                        <div className="d-flex flex-column align-items-center text-center p-3 py-5"></div>
                     </div>
                     <div className="col-md-5 border-right">
                         <div className="p-3 py-5">
@@ -29,9 +29,10 @@ export default function profile(){
                             </div>
                             <div className="row mt-3">
                                 <div className="col-md-6"><label className="labels">Country</label><input type="text" className="form-control" placeholder="country" value=""/></div>
-                                <div className="col-md-6"><label className="labels">State/Region</label><input type="text" className="form-control" value="" placeholder="state"/></div>
+                                <div className="col-md-6"><label className="labels">State/Region</label><input type="text" className="form-control" value="" placeholder="state"/></div><br/>
+                                <div className="button"><button className="btn btn-primary profile-button" type="button">Save Profile</button></div>
                             </div>
-                            <div className="mt-5 text-center"><button className="btn btn-primary profile-button" type="button">Save Profile</button></div>
+                            <br/>
                         </div>
                     </div>
                 </div>

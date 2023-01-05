@@ -1,4 +1,13 @@
-.container rounded bg-white mt-5 mb-5{
-    margin-left: auto;
-    margin-right: auto;
+.row{
+    margin-left: 425px;
+    display: block;
+    width: 150px;
+}
+
+.text-right{
+    margin-left: 425px; 
+}
+
+.button{
+    margin-left: 60px; 
 }

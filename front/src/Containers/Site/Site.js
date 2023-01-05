@@ -6,7 +6,7 @@ import { RegisterForm } from "../../component/forms/registerForm";
 import { LoginForm } from "../../component/forms/loginForm";
 import Search from '../../component/search/Search';
 import Profile from "../../component/profile/profile";
-import {Switch, Route} from "react-router-dom";
+import {Routes, Route, BrowserRouter} from "react-router-dom";
 import Accueil from "./Accueil"
 
 class Site extends Component {
@@ -15,10 +15,12 @@ class Site extends Component {
             <>
                 <NavBar/>
                 <Search/>
-                {/* <RegisterForm/>
-                <LoginForm/> */}
-                <Profile/>
-                {/* <Accueil/> */}
+                    <Routes>
+                        <Route path="/" element={<Accueil/>}/>
+                        <Route path="/profile" element={<Profile/>}/>
+                        <Route path="/inscription" element={<RegisterForm/>}/>
+                        <Route path="/Connexion" element={<LoginForm/>}/>
+                    </Routes>
                 <Footer/>
             </>
         );
