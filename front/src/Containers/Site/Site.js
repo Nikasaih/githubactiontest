@@ -21,6 +21,8 @@ class Site extends Component {
                         <Route path="/inscription" element={<RegisterForm/>}/>
                         <Route path="/Connexion" element={<LoginForm/>}/>
                     </Routes>
+                <br/>
+                <br/>
                 <Footer/>
             </>
         );
