@@ -1,13 +1,111 @@
-.row{
-    margin-left: 425px;
-    display: block;
-    width: 150px;
+.profile-page {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-.text-right{
-    margin-left: 425px; 
+.profile-header {
+  position: relative;
+  height: 300px;
+  background-color: #f1f1f1;
 }
 
-.button{
-    margin-left: 60px; 
+.profile-header__background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('https://picsum.photos/id/1001/800/300');
+  background-size: cover;
+  filter: blur(5px);
+  z-index: -1;
+}
+
+.profile-header__avatar {
+  position: absolute;
+  bottom: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-image: url('https://picsum.photos/id/1005/100');
+  background-size: cover;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.profile-header__username {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2rem;
+  font-weight: 700;
+  color: #222;
+}
+
+.profile-body {
+  margin-top: 100px;
+  padding: 30px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.profile-body__section {
+  margin-bottom: 30px;
+}
+
+.profile-body__section-title {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #222;
+}
+
+.profile-body__info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.profile-body__info-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  min-width: 200px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #f1f1f1;
+}
+
+.profile-body__info-label {
+  margin-bottom: 5px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #222;
+}
+
+.profile-body__info-value {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #444;
+}
+
+.profile-body__info-action {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #222;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.profile-body__info-action:hover {
+  background-color: #111;
 }

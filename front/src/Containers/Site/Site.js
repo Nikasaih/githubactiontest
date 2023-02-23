@@ -6,7 +6,7 @@ import { RegisterForm } from "../../component/forms/registerForm";
 import { LoginForm } from "../../component/forms/loginForm";
 import Search from '../../component/search/Search';
 import Profile from "../../component/profile/profile";
-import {Routes, Route, BrowserRouter} from "react-router-dom";
+import {Routes, Route} from "react-router-dom";
 import Accueil from "./Accueil"
 
 class Site extends Component {

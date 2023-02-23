@@ -21,7 +21,7 @@ nav {
     cursor: pointer
 }
 
-@media screen and (max-width: 500px) {
+/* @media screen and (max-width: 500px) {
     .liste{
         flex-direction: column;
         height: 200 px;
@@ -36,4 +36,4 @@ nav {
         border-bottom:1px solid #FFF;
         line-height: 50px;
     }
-}
+} */

@@ -1,5 +1,6 @@
 import React from "react";
 import "./Accueil.css";
+import Search from "../../component/search/Search";
 
 export default function Accueil(){
     return(
@@ -31,7 +32,7 @@ export default function Accueil(){
                     <button className="card__btn">Add to chart</button>
                 </div>
             </div>
-            <div className="card">      
+            {/*<div className="card">      
                 <img src = "https://static.cardmarket.com/img/e759bb9c354f7589790f9c1eefb79a31/items/1040/SAOS80/583011.jpg"className="card__img" />
                 <div className="card__body">
                     <h2 className="card__title">《Priestess of Light》 Alice (V.2 - Special Rare)</h2>
@@ -111,7 +112,7 @@ export default function Accueil(){
                     <h3 className="card_price">750€</h3>
                     <button className="card__btn">Add to chart</button>
                 </div>
-            </div>
+            </div> */}
         </div>
     )
 }
